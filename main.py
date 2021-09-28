@@ -33,10 +33,8 @@ exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise?"
 response = requests.post(url=exercise_endpoint, headers=nutritionix_headers, json=body_nutritionix)
 response.raise_for_status()
 data = response.json()
-print(data)
 
 exercises = [el for el in data["exercises"]]
-print(exercises)
 
 today = datetime.now()
 
